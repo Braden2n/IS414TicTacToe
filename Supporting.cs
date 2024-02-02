@@ -11,6 +11,7 @@ namespace TicTacToe
 {
     internal class Supporting
     {
+        public Supporting() { }
         private bool AllEqual(int[] position)
         {
             // Compares all values for equality
@@ -134,7 +135,7 @@ namespace TicTacToe
             // Return defaults
             return (false, 0);
         }
-        private (bool, int) GameStatus(int[] GameBoard)
+        public (bool, int) GameStatus(int[] GameBoard)
         {
             // Gets game status from defaults or CheckSlices results if a winner
             // Game winner state check
@@ -179,7 +180,7 @@ namespace TicTacToe
                 Console.WriteLine();
                 if (row < sideLength - 1)
                 {
-                    Console.Write(new string('-', sideLength * 4 - 1));
+                    Console.WriteLine(new string('-', sideLength * 4 - 1));
                 }
             }
 
