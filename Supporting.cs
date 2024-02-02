@@ -148,6 +148,40 @@ namespace TicTacToe
         }
         public void PrintBoard(int[] GameBoard)
         {
+            int sideLength = (int)Math.Sqrt(GameBoard.Length);
+            for (int row = 0; row < sideLength; row++)
+            {
+                for (int col = 0; col < sideLength; col++)
+                {
+                    int index = row * sideLength + col;
+
+                    // couldn't figure put this portion so looked it up. not sure whats right here
+                    switch (GameBoard[index])
+                    {
+                        case 0:
+                            Console.Write("   ");
+                            break;
+                        case 1:
+                            Console.Write(" X ");
+                            break;
+                        case 2:
+                            Console.Write(" O ");
+                            break;
+                        default:
+                            Console.Write(" ? ");
+                            break;
+                    }
+                    if (col < sideLength - 1)
+                    {
+                        Console.Write("|");
+                    }
+                }
+                Console.WriteLine();
+                if (row < sideLength - 1)
+                {
+                    Console.Write(new string('-', sideLength * 4 - 1));
+                }
+            }
 
         }
     }
