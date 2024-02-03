@@ -155,12 +155,10 @@ namespace TicTacToe
                 for (int col = 0; col < sideLength; col++)
                 {
                     int index = row * sideLength + col;
-
-                    // couldn't figure put this portion so looked it up. not sure whats right here
                     switch (GameBoard[index])
                     {
                         case 0:
-                            Console.Write("   ");
+                            Console.Write(" " + (index + 1) + " ");
                             break;
                         case 1:
                             Console.Write(" X ");
