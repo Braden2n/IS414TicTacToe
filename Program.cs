@@ -4,13 +4,6 @@ class Program
 {
     static void Main()
     {
-        // Create a game board array to store players' choices
-        int[] gameBoard = new int[9];
-        // Initialize players
-        int player1 = 1;
-        int player2 = 2;
-        // Game loop
-        int currentPlayer = 1;
         Console.WriteLine("Welcome to Tic-Tac-Toe!");
         Console.WriteLine("To play, you will have to indicate the position you want to mark according to the board numbers available.");
         Console.WriteLine("=== EXAMPLE BOARD ===");
@@ -25,6 +18,15 @@ class Program
         Console.WriteLine("Or, if you wanted to mark the top right corner, you would indicate number 3 instead.");
         Console.WriteLine("Occupied spaces will be marked with either an X or an O");
         Console.WriteLine("Let's begin!");
+        Console.WriteLine("Player 1, would you like to be X or O?");
+        Console.WriteLine("Default: X");
+        // Initialize players based on default inline if statement resolving to 1
+        int player1 = (Console.ReadLine().ToUpper() == "O") ? 2 : 1;
+        int player2 = (player1 == 2) ? 1 : 2;
+        // Create a game board array to store players' choices
+        int[] gameBoard = new int[9];
+        // Game loop
+        int currentPlayer = 1;
         Supporting supporting = new Supporting();
         for (int i = 0; i < gameBoard.Length; i++)
         {
